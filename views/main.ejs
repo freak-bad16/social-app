@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile | MiniSocial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-zinc-600 min-h-screen text-white">
+
+    <!-- Top Navbar -->
+    <nav class="bg-zinc-800 px-6 py-4 flex justify-between items-center shadow-md">
+        <div class="flex items-center gap-6">
+            <a href="/main" class="text-2xl font-bold hover:text-indigo-400 transition duration-200">MiniSocial</a>
+
+            <a href="/profile" class="text-white hover:text-indigo-400 text-lg font-medium">
+                😊 <%= user.userName %>
+            </a>
+        </div>
+        <a href="/logout" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-medium transition">
+            Logout
+        </a>
+    </nav>
+
+
+
+</body>
+
+</html>

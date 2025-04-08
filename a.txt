@@ -1,0 +1,17 @@
+mongoose jsonwebtoken express ejs cookie-parser bcryptjs
+
+
+user can register and login    -- done
+user can log out               -- done
+user can create post           -- done
+user can delete post           -- done
+user can edit post             -- done
+user can like post             -- done  but color is not changing
+
+
+user cant acces un autherized page    -- done
+
+
+
+time of post 
+user image with post 
