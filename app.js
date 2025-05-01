@@ -80,12 +80,34 @@ app.get("/main", isLoggedIn, async (req, res) => {
     let email = req.user.email.toLowerCase();
     let user = await userModel.findOne({ email });
 
-    // console.log("User loaded for /main:", user);
-
     if (!user) return res.redirect("/login");
 
-    res.render("main", { user: user });
+    try {
+        const posts = await postModel.find().populate('user').sort({ createdAt: -1 });
+
+        res.render("main", { user: user, posts: posts });
+    } catch (error) {
+        console.error("Error fetching posts:", error);
+        res.status(500).send("Internal Server Error");
+    }
 });
+// like post in main
+app.post("/like/main/:id", isLoggedIn, async (req, res) => {
+    let post = await postModel.findOne({ _id: req.params.id }).populate("user");
+
+    const userId = req.user.userid;
+    const userIndex = post.likes.indexOf(userId);
+
+    if (userIndex === -1) {
+        post.likes.push(userId);
+    } else {
+        post.likes.splice(userIndex, 1);
+    }
+
+    await post.save();
+    res.redirect("/main");
+});
+
 
 app.get("/profile", isLoggedIn, async (req, res) => {
     let email = req.user.email.toLowerCase();

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile | MiniSocial</title>
+    <title>Main | MiniSocial</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
@@ -16,11 +16,10 @@
 
 <body class="bg-zinc-600 min-h-screen text-white">
 
-    <!-- Top Navbar -->
+    <!-- Navbar -->
     <nav class="bg-zinc-800 px-6 py-4 flex justify-between items-center shadow-md">
         <div class="flex items-center gap-6">
             <a href="/main" class="text-2xl font-bold hover:text-indigo-400 transition duration-200">MiniSocial</a>
-
             <a href="/profile" class="text-white hover:text-indigo-400 text-lg font-medium">
                 😊 <%= user.userName %>
             </a>
@@ -30,7 +29,43 @@
         </a>
     </nav>
 
+    <div class="p-6 max-w-3xl mx-auto">
+        <h2 class="text-2xl font-semibold mb-6 text-white">Recent Posts</h2>
 
+        <% if (posts.length === 0) { %>
+            <p class="text-gray-300">No posts yet. Be the first to post!</p>
+        <% } else { %>
+            <% posts.reverse().forEach(post => { %>
+                <div class="bg-zinc-700 p-5 rounded-xl shadow-md mb-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-300">
+                            <img src="/images/uplodes/<%= post.user.profilePic %>" alt="Profile Picture" class="object-cover w-full h-full">
+                        </div>
+                        <div>
+                            <p class="text-white font-bold">@<%= post.user.userName %></p>
+                            <small class="text-gray-400"><%= post.createdAt?.toLocaleString() %></small>
+                        </div>
+                    </div>
+                
+                    <p class="text-white mb-4"><%= post.content %></p>
+                
+                    <form action="/like/main/<%= post._id %>" method="POST">
+                        <div class="flex justify-between text-sm text-gray-300">
+                            <% const isLiked = post.likes.includes(user._id.toString()); %>
+                
+                            <button type="submit" class="hover:text-red-400 transition">
+                                <% if (isLiked) { %>
+                                    ❤️ <%= post.likes.length %>
+                                <% } else { %>
+                                    🤍 <%= post.likes.length %>
+                                <% } %>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            <% }); %>
+        <% } %>
+    </div>
 
 </body>
 
