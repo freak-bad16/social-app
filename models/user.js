@@ -1,20 +1,64 @@
-const mongoose  = require("mongoose");
+const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/miniProject3");
+mongoose.connect("mongodb://127.0.0.1:27017/rtiProject", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
-const userSchema = mongoose.Schema({
-    userName : String,
-    name : String,
-    age : Number,
-    email : String,
-    password : String,
-    profilePic :{
-        type : String ,
-        default : "default.png"
+const userSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
     },
-    posts : [
-        {type : mongoose.Schema.Types.ObjectId , ref: "post"}
-    ]
-})
+    dob: {
+        type: Date,
+        required: true
+    },
+    gender: {
+        type: String,
+        enum: ['Male', 'Female', 'Other'],
+        required: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    phone: {
+        type: String,
+        required: true
+    },
+    aadharNumber: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    address: {
+        country: { type: String, required: true },
+        pinCode: { type: String, required: true },
+        areaType: {
+            type: String,
+            enum: ['Urban', 'Rural'],
+            required: true
+        }
+    },
+    povertyLevel: {
+        type: String,
+        enum: ['APL', 'BPL', 'Unspecified'],
+        required: true
+    },
+    captcha: {
+        type: String,
+        required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
+});
 
-module.exports = mongoose.model("user" , userSchema)
+module.exports = mongoose.model("User", userSchema);

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
   
   <nav class="bg-blue-600 p-4 shadow-md">
     <div class="flex items-center justify-between">
-     
+      
       <div class="flex items-center space-x-2">
         <img src="your-logo-url.png" alt="Logo" class="w-10 h-10">
         <span class="text-white text-2xl font-semibold">RTI SHAYAK</span>
@@ -39,22 +40,32 @@
   </div>
 
   
-  <div class="flex flex-wrap justify-center items-start p-10 gap-10">
-   
-    <div class="w-full md:w-2/5 text-gray-800 text-justify">
-      <p class="leading-relaxed">
-        The Right to Information Bill was introduced in the Lok Sabha in December 2004. It was passed
-        by both houses of Parliament with major amendments in May 2005. The assent of the President was received on June 15 and the Act was notified in the Gazette on June 21. The law became operational by mid-October 2005. This law was passed by Parliament to enable citizens to exercise their fundamental right to
-        information held by public authorities all over the country (except Jammu and Kashmir). The RTI
-        Act aims to bring about transparency in the functioning of public authorities, contain corruption
-        and hold Governments and their instrumentalities accountable to people. It creates a process for providing information to people. The RTI Act places a duty on officers to provide information both proactively and upon request. It provides for a two-tier appeals mechanism to deal with complaints of denial of information by public authorities. This law overrides the Official Secrets Act, 1923, and all other laws and orders that restrict information flow.
-      </p>
-    </div>
+  <div class="max-w-4xl mx-auto my-10 p-8 bg-white shadow-md rounded-lg">
+    <h1 class="text-3xl font-bold text-blue-600 mb-6 text-center">User Profile</h1>
 
-    
-    <div class="w-full md:w-2/5 flex flex-col gap-6 items-center">
-      <img src="https://fileonlinerti.in/assets/img/blog/Jharkhand.png" alt="Image 1" class="w-full rounded-lg shadow-md">
-      <input type="text">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Personal Info</h2>
+        <p><strong>Name:</strong> <%= user.name %></p>
+        <p><strong>Date of Birth:</strong> <%= user.dob.toDateString() %></p>
+        <p><strong>Gender:</strong> <%= user.gender %></p>
+        <p><strong>Email:</strong> <%= user.email %></p>
+        <p><strong>Phone:</strong> <%= user.phone %></p>
+        <p><strong>Aadhar Number:</strong> <%= user.aadharNumber %></p>
+        <p><strong>Account Created:</strong> <%= user.createdAt.toDateString() %></p>
+      </div>
+
+      
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Address & Other Info</h2>
+        <p><strong>Country:</strong> <%= user.address.country %></p>
+        <p><strong>Pin Code:</strong> <%= user.address.pinCode %></p>
+        <p><strong>Area Type:</strong> <%= user.address.areaType %></p>
+        <p><strong>Poverty Level:</strong> <%= user.povertyLevel %></p>
+        <p><strong>Captcha:</strong> <%= user.captcha %></p>
+      </div>
     </div>
   </div>
 
