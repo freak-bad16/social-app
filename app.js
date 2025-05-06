@@ -102,6 +102,53 @@ app.post("/register", async (req, res) => {
         res.status(500).send("Registration failed");
     }
 });
+app.post("/application", async (req, res) => {
+    const {
+        name,
+        dob,
+        gender,
+        email,
+        phone,
+        aadharNumber,
+        ministry,
+        article,
+        infoOfRequest,
+        justification,
+        submissionMode,
+        povertyLevel,
+        pinCode,
+        country,
+        areaType,
+        password
+    } = req.body;
+
+    const existingApp = await Application.findOne({ email, aadharNumber });
+    if (existingApp) {
+        return res.status(400).send("Application already submitted.");
+    }
+
+    const newApplication = await Application.create({
+        name,
+        dob,
+        gender,
+        email: email.toLowerCase(),
+        phone,
+        aadharNumber,
+        ministry,
+        article,
+        infoOfRequest,
+        justification,
+        submissionMode,
+        povertyLevel,
+        pinCode,
+        country,
+        areaType,
+        password
+    });
+
+    res.status(201).send("Application submitted successfully");
+});
+
 
 // Login
 app.get("/login", (req, res) => {
@@ -143,8 +190,8 @@ app.get("/articles", (req, res) => {
 });
 
 // RTI File
-app.get("/rti-file", (req, res) => {
-    res.render("rtiFile")
+app.get("/rti-file", authenticateUser, (req, res) => {
+    res.render("rtiFile", { user: req.user })
 });
 
 // Chat
