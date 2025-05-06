@@ -1,11 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RTI Simplifier</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .content-container {
+      max-width: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .translate-container {
+      position: fixed;
+      top: 2rem;
+      right: 1rem;
+      z-index: 9999;
+      background-color: rgba(175, 15, 15, 0.8);
+      border-radius: 8px;
+      padding: 8px 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  <style>
+    .main-content {
+      background-image: url("https://ih1.redbubble.net/image.1233400817.0820/raf,360x360,075,t,fafafa:ca443f4786.u1.jpg");
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+      scale: 107%;
+    }
+  </style>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,kn,bn',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <script type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
-<body>
-    articals
+
+<body class="bg-gray-100">
+  <header class="sticky top-0 z-50">
+    <nav class="bg-blue-600 bg-cover bg-bottom p-6 shadow-md"
+      style="background-image: url('https://rti.jharkhand.gov.in/assets/images/banner1.jpg');">
+      <div class="flex flex-wrap items-center justify-between bg-opacity-75 p-4 rounded">
+        <div class="flex items-center space-x-2">
+          <img src="https://rti.jharkhand.gov.in/images/logo/green-rti.jpg" alt="RTI Logo" class="w-24 h-24" />
+          <div class="">
+            <span class="text-white text-2xl font-semibold">RTI SHAYAK</span>
+            <h1 class="ml-6">" Suchna Ka Adhikaar, Loktantra Ka Hathiyaar! " </h1>
+        </div>
+        </div>
+        <div class="space-x-4">
+          <a href="/login" class="text-white bg-green-500 px-4 py-2 rounded hover:bg-green-600">Login</a>
+          <a href="/signup" class="text-white bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">Sign Up</a>
+        </div>
+        <div id="google_translate_element" class="absolute bottom-2 right-4 "></div>
+      </div>
+    </nav>
+    <div class="bg-gray-200 p-3 shadow-md">
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/main" class="text-blue-600 hover:text-blue-800">Home</a>
+        <a href="/articles" class="text-blue-600 hover:text-blue-800">Articles</a>
+        <a href="/rti-file" class="text-blue-600 hover:text-blue-800">RTI File</a>
+        <a href="/chat" class="text-blue-600 hover:text-blue-800">Chat bot</a>
+        <a href="/view-status" class="text-blue-600 hover:text-blue-800">View Status</a>
+        <a href="/faq" class="text-blue-600 hover:text-blue-800">FAQ</a>
+        <a href="/view-history" class="text-blue-600 hover:text-blue-800">View History</a>
+        <a href="/contactus" class="text-blue-600 hover:text-blue-800">contact us</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-content p-10">
+
+    <main class="content-container p-10 ">
+      <h1 class="text-4xl font-bold text-blue-700 mb-6 mt-10 text-center">Right to Information (RTI) Act, 2005</h1>
+
+      <section class="bg-white/50 rounded-xl shadow p-6 mb-6 flex flex-col lg:flex-row gap-6">
+        <div class="lg:w-2/3">
+          <h2 class="text-2xl font-semibold mb-2">🔍 What is RTI?</h2>
+          <p>The RTI Act, 2005 empowers Indian citizens to request information from public authorities, promoting
+            transparency and accountability in government operations. This right ensures citizens have access to public
+            records and the ability to question government activities, allowing them to make informed decisions and
+            contribute to good governance.</p>
+          <p>This act is an essential tool for democracy as it holds public authorities accountable for their actions,
+            fostering transparency and trust in government.</p>
+        </div>
+
+        <div class="lg:w-1/3 flex justify-center items-center">
+          <iframe class="w-full aspect-video rounded-xl"
+            src="https://www.youtube.com/embed/np5Jd_uezNI?si=Y8DGcK549264xtRR" frameborder="0"
+            allowfullscreen></iframe>
+        </div>
+      </section>
+
+
+      <section class="bg-white/60 rounded-xl shadow p-6 mb-6 flex flex-col lg:flex-row gap-6">
+        <div class="lg:w-2/3">
+          <h2 class="text-2xl font-semibold mb-4">👤 2. Who Can File an RTI?</h2>
+          <ul class="list-disc pl-6">
+            <li><strong>Any citizen of India</strong> can file an RTI application.</li>
+            <li>No reason or motive needs to be given.</li>
+          </ul>
+        </div>
+
+        <div class="lg:w-1/3 flex justify-center items-center">
+          <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/7zzPHrhgW0k" frameborder="0"
+            allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section class="bg-white/60 rounded-xl shadow p-6 mb-6 flex flex-col lg:flex-row gap-6">
+        <div class="lg:w-2/3">
+          <h2 class="text-2xl font-semibold mb-4">🏛️ 3. Where Can You File an RTI?</h2>
+          <ul class="list-disc pl-6">
+            <li><strong>Public authorities only</strong> — like government bodies, PSUs, government-funded NGOs.</li>
+            <li>Private companies are <strong>not</strong> directly under RTI but can be queried via related public
+              bodies.</li>
+          </ul>
+        </div>
+
+        <div class="lg:w-1/3 flex justify-center items-center">
+          <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/r0c6vC1mw0Y" frameborder="0"
+            allowfullscreen></iframe>
+        </div>
+      </section>
+
+
+
+      <section class="bg-white/60 rounded-xl shadow p-6 mb-6 flex flex-col lg:flex-row gap-6">
+        <div class="lg:w-2/3">
+          <h2 class="text-2xl font-semibold mb-4">📄 4. What Kind of Information Can Be Asked?</h2>
+          <ul class="list-disc pl-6">
+            <li>Any information that is <strong>available and existing in recorded form</strong>.</li>
+            <li>Examples: government decisions, file notings, expenditure, recruitment, etc.</li>
+          </ul>
+        </div>
+
+        <div class="lg:w-1/3 flex justify-center items-center">
+          <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+            frameborder="0" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section class="bg-white/60 rounded-xl shadow p-6 mb-6 flex flex-col lg:flex-row gap-6">
+        <div class="lg:w-2/3">
+          <h2 class="text-2xl font-semibold mb-4">📝 5. How to File an RTI?</h2>
+          <ul class="list-disc pl-6">
+            <li><strong>Online</strong> via <a href="https://rtionline.gov.in/" class="text-blue-600 underline">RTI
+                Online
+                portal</a></li>
+            <li><strong>Offline</strong> using handwritten or typed application</li>
+            <li>₹10 fee; waived for BPL applicants</li>
+          </ul>
+        </div>
+
+        <div class="lg:w-1/3 flex justify-center items-center">
+          <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+            frameborder="0" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section class="bg-white/60 rounded-xl shadow p-6 mb-6 flex flex-col lg:flex-row gap-6">
+        <div class="lg:w-2/3">
+          <h2 class="text-2xl font-semibold mb-4">⏳ 6. Time Limit for Reply</h2>
+          <ul class="list-disc pl-6">
+            <li><strong>30 days</strong> from date of application</li>
+            <li><strong>48 hours</strong> for life and liberty-related requests</li>
+            <li>5 extra days if RTI is transferred to another authority</li>
+          </ul>
+        </div>
+
+        <div class="lg:w-1/3 flex justify-center items-center">
+          <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+            frameborder="0" allowfullscreen></iframe>
+      </section>
+
+
+      <section class="bg-white/60 rounded-xl shadow p-6 mb-6 flex flex-col lg:flex-row gap-6">
+        <div class="lg:w-2/3">
+          <h2 class="text-2xl font-semibold mb-4">🚫 7. Exemptions from Disclosure</h2>
+          <p>Section 8 lists exemptions like:</p>
+          <ul class="list-disc pl-6">
+            <li>National security</li>
+            <li>Personal data with no public interest</li>
+            <li>Information harming India’s sovereignty</li>
+            <li>Cabinet papers before decisions</li>
+          </ul>
+        </div>
+
+        <div class="lg:w-1/3 flex justify-center items-center">
+          <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+            frameborder="0" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section class="bg-white/60 rounded-xl shadow p-6 mb-6 flex flex-col lg:flex-row gap-6">
+        <div class="lg:w-2/3">
+          <h2 class="text-2xl font-semibold mb-4">📬 8. What If You Don’t Get a Satisfactory Response?</h2>
+          <ul class="list-disc pl-6">
+            <li>File a <strong>First Appeal</strong> within 30 days to senior officer</li>
+            <li>Then file a <strong>Second Appeal</strong> to Central/State Information Commission</li>
+          </ul>
+        </div>
+
+        <div class="lg:w-1/3 flex justify-center items-center">
+          <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+            frameborder="0" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section class="bg-white/60 rounded-xl shadow p-6 mb-6 flex flex-col lg:flex-row gap-6">
+        <div class="lg:w-2/3">
+          <h2 class="text-2xl font-semibold mb-4">⚖️ 9. Penalties for Non-Compliance</h2>
+          <ul class="list-disc pl-6">
+            <li>₹250/day up to ₹25,000 for PIOs for:</li>
+            <ul class="list-disc pl-10">
+              <li>Delays without valid cause</li>
+              <li>Refusal or misleading replies</li>
+            </ul>
+          </ul>
+        </div>
+
+        <div class="lg:w-1/3 flex justify-center items-center">
+          <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+            frameborder="0" allowfullscreen></iframe>
+        </div>
+      </section>
+
+
+      <section class="bg-white/60 rounded-xl shadow p-6 mb-6">
+        <h2 class="text-2xl font-semibold mb-4">🏛️ 10. Role of Information Commissions</h2>
+        <ul class="list-disc pl-6">
+          <li>Final authority on RTI disputes</li>
+          <li>Can order inquiries and impose penalties</li>
+          <li>Ensure compliance from public authorities</li>
+        </ul>
+      </section>
+
+    </main>
+
+  </div>
+
 </body>
+
 </html>

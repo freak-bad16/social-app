@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RTI Sahayak Chatbot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Floating Button -->
+  <div class="fixed bottom-5 right-5 z-50">
+    <button onclick="toggleChat()" class="bg-orange-500 text-white w-14 h-14 rounded-full shadow-lg text-2xl flex items-center justify-center">💬</button>
+  </div>
+
+  <!-- Chatbox -->
+  <div id="chatbox" class="fixed bottom-24 right-5 w-80 bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 hidden">
+    <!-- Header -->
+    <div class="bg-orange-500 text-white px-4 py-2 flex justify-between items-center font-bold">
+      <span>RTI Sahayak Chatbot</span>
+      <span class="cursor-pointer" onclick="toggleChat()">❌</span>
+    </div>
+
+    <!-- Messages -->
+    <div id="messages" class="h-80 overflow-y-auto p-4 text-sm space-y-2 bg-gray-50"></div>
+
+    <!-- Input -->
+    <div class="flex items-center p-3 border-t">
+      <input id="userInput" type="text" placeholder="Apna prashn likhiye..." class="flex-1 border border-gray-300 rounded px-2 py-1 text-sm" />
+      <button onclick="sendMessage()" class="ml-2 bg-orange-500 text-white px-3 py-1 rounded text-sm">📤</button>
+      <button onclick="startVoiceRecognition()" class="ml-1 bg-orange-500 text-white px-3 py-1 rounded text-sm">🎤</button>
+    </div>
+
+    <!-- Download Button -->
+    <div id="submitSection" class="p-3 hidden">
+      <button onclick="downloadRTIPDF()" class="w-full bg-green-600 text-white py-2 rounded text-sm">RTI Application डाउनलोड करें</button>
+    </div>
+  </div>
+
+  <script>
+    let recognition;
+    let finalTranscript = '';
+    let chatHistory = [];
+
+    const predefinedQA = {
+      "bijli": "Bijli ke adhik bill ka karan adhik upyog ya galti ho sakti hai.",
+      "bill": "Bijli ke adhik bill ka karan adhik upyog ya galti ho sakti hai.",
+      "road": "Sadak nirmaan me karcha sarkari tender ke anusar hota hai.",
+      "karcha": "Sadak nirmaan me karcha sarkari tender ke anusar hota hai.",
+      "ration": "Ration card sambandhi jankari aapke rajya ki sarkari website par uplabdh hai.",
+      "pension": "Pension ke liye aapko sarkari yojna ke tahat form bharna hota hai.",
+      "pani": "Pani ki samasya ke liye nagar nigam me shikayat darj karein.",
+      "sadak": "Sadak nirmaan me karcha sarkari tender ke anusar hota hai."
+    };
+
+    function toggleChat() {
+      const box = document.getElementById("chatbox");
+      box.classList.toggle("hidden");
+    }
+
+    function startVoiceRecognition() {
+      if (!('webkitSpeechRecognition' in window)) {
+        alert("Voice recognition not supported");
+        return;
+      }
+
+      recognition = new webkitSpeechRecognition();
+      recognition.lang = "hi-IN";
+      recognition.interimResults = false;
+
+      recognition.onresult = function(event) {
+        finalTranscript = event.results[0][0].transcript;
+        document.getElementById("userInput").value = finalTranscript;
+        sendMessage();
+      };
+      recognition.start();
+    }
+
+    function speak(text) {
+      const msg = new SpeechSynthesisUtterance();
+      msg.text = text;
+      msg.lang = 'hi-IN';
+      window.speechSynthesis.speak(msg);
+    }
+
+    function sendMessage() {
+      const input = document.getElementById("userInput").value.toLowerCase().trim();
+      if (!input) return;
+
+      const messages = document.getElementById("messages");
+      messages.innerHTML += `<div><strong>आप:</strong> ${input}</div>`;
+
+      let answer = "Maaf kijiye, mujhe aapka prashn samajh nahi aaya";
+
+      for (const key in predefinedQA) {
+        if (input.includes(key)) {
+          answer = predefinedQA[key];
+          break;
+        }
+      }
+
+      chatHistory.push({ question: input, answer: answer });
+
+      messages.innerHTML += `<div><strong>Bot:</strong> ${answer}</div>`;
+      messages.scrollTop = messages.scrollHeight;
+
+      speak(answer);
+      document.getElementById("userInput").value = "";
+
+      if (chatHistory.length >= 3) {
+        document.getElementById("submitSection").classList.remove("hidden");
+      }
+    }
+
+    function downloadRTIPDF() {
+      const text = chatHistory.map((qna, i) =>
+        `${i + 1}. प्रश्न: ${qna.question}\nउत्तर: ${qna.answer}\n`
+      ).join("\n");
+
+      const blob = new Blob([`RTI Application\n\n${text}`], { type: "text/plain" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "RTI-Application.txt";
+      link.click();
+    }
+  </script>
+</body>
+</html>

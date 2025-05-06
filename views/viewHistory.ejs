@@ -1,73 +1,155 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RTI Simplifier</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RTI Simplifier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .main-content {
+            background-image: url("https://media.assettype.com/theleaflet/import/wp-content/uploads/2022/06/RTI-ACt-2.png?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true");
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            scale: 100%;
+        }
+    </style>
 </head>
+
 <body class="bg-gray-100">
 
-  
-  <nav class="bg-blue-600 p-4 shadow-md">
-    <div class="flex items-center justify-between">
-      
-      <div class="flex items-center space-x-2">
-        <img src="your-logo-url.png" alt="Logo" class="w-10 h-10">
-        <span class="text-white text-2xl font-semibold">RTI SHAYAK</span>
-      </div>
+    <div class="sticky top-0 z-50">
+        <nav class="relative bg-blue-600 bg-cover bg-bottom p-6 shadow-md"
+            style="background-image: url('https://rti.jharkhand.gov.in/assets/images/banner1.jpg');">
 
-      
-      <div class="space-x-4">
-        <a href="/login" class="text-white bg-green-500 px-4 py-2 rounded hover:bg-green-600">Login</a>
-        <a href="/signup" class="text-white bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">Sign Up</a>
-      </div>
+            <div class="flex items-center justify-between bg-opacity-75 p-4 rounded">
+                <div class="flex items-center space-x-2">
+                    <img src="https://rti.jharkhand.gov.in/images/logo/green-rti.jpg" alt="Logo" class="w-24 h-24" />
+                    <div class="">
+                        <span class="text-white text-2xl font-semibold">RTI SHAYAK</span>
+                        <h1 class="ml-6">" Suchna Ka Adhikaar, Loktantra Ka Hathiyaar! " </h1>
+                    </div>
+                </div>
+
+                <div class="space-x-4">
+                    <a href="/login" class="text-white bg-green-500 px-4 py-2 rounded hover:bg-green-600">Login</a>
+                    <a href="/signup" class="text-white bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">Sign Up</a>
+                </div>
+            </div>
+
+            <div class="absolute bottom-2 right-4">
+                <select class="bg-white text-sm rounded px-2 py-1 shadow focus:outline-none"
+                    aria-label="Language selection">
+                    <option>English</option>
+                    <option>हिन्दी</option>
+                    <option>खोरठा</option>
+                    <option>बंगाली</option>
+                </select>
+            </div>
+
+        </nav>
+
+
+        <div class="bg-gray-200 p-3 shadow-md">
+            <div class="flex justify-center space-x-6">
+                <a href="/main" class="text-blue-600 hover:text-blue-800">Home</a>
+                <a href="/articles" class="text-blue-600 hover:text-blue-800">Articles</a>
+                <a href="/rti-file" class="text-blue-600 hover:text-blue-800">RTI File</a>
+                <a href="/chat" class="text-blue-600 hover:text-blue-800">Chat bot</a>
+                <a href="/view-status" class="text-blue-600 hover:text-blue-800">View Status</a>
+                <a href="/faq" class="text-blue-600 hover:text-blue-800">FAQ</a>
+                <a href="/view-history" class="text-blue-600 hover:text-blue-800">View History</a>
+                <a href="/contactus" class="text-blue-600 hover:text-blue-800">contact us</a>
+            </div>
+        </div>
     </div>
-  </nav>
 
-  
-  <div class="bg-gray-200 p-3 shadow-md">
-    <div class="flex justify-center space-x-6">
-      <a href="/" class="text-blue-600 hover:text-blue-800">Home</a>
-      <a href="/articles" class="text-blue-600 hover:text-blue-800">Articles</a>
-      <a href="/rti-file" class="text-blue-600 hover:text-blue-800">RTI File</a>
-      <a href="/chat" class="text-blue-600 hover:text-blue-800">Chat</a>
-      <a href="/view-status" class="text-blue-600 hover:text-blue-800">View Status</a>
-      <a href="/faq" class="text-blue-600 hover:text-blue-800">FAQ</a>
-      <a href="/view-history" class="text-blue-600 hover:text-blue-800">View History</a>
+
+    <div class="main-content">
+        <div class="max-w-4xl mx-auto mt-8 mb-6 p-6 bg-white/60 shadow rounded-md ">
+            <h1 class="text-2xl font-bold text-blue-700 mb-4 text-center">User Profile</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm leading-6">
+                <div>
+                    <h2 class="text-lg font-semibold mb-2">Personal Info</h2>
+                    <p><strong>Name:</strong>
+                        <%= user.name %>
+                    </p>
+                    <p><strong>Date of Birth:</strong>
+                        <%= user.dob.toDateString() %>
+                    </p>
+                    <p><strong>Gender:</strong>
+                        <%= user.gender %>
+                    </p>
+                    <p><strong>Email:</strong>
+                        <%= user.email %>
+                    </p>
+                    <p><strong>Phone:</strong>
+                        <%= user.phone %>
+                    </p>
+                    <p><strong>Aadhar Number:</strong>
+                        <%= user.aadharNumber %>
+                    </p>
+                    <p><strong>Account Created:</strong>
+                        <%= user.createdAt.toDateString() %>
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-lg font-semibold mb-2">Address & Other Info</h2>
+                    <p><strong>Country:</strong>
+                        <%= user.address.country %>
+                    </p>
+                    <p><strong>Pin Code:</strong>
+                        <%= user.address.pinCode %>
+                    </p>
+                    <p><strong>Area Type:</strong>
+                        <%= user.address.areaType %>
+                    </p>
+                    <p><strong>Poverty Level:</strong>
+                        <%= user.povertyLevel %>
+                    </p>
+                    <p><strong>Captcha:</strong>
+                        <%= user.captcha %>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto mb-10 p-6 bg-white/60 shadow rounded-md">
+            <h2 class="text-xl font-bold text-green-700 mb-4 text-center">Recent RTI Files</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 border border-gray-200/60 p-4 rounded-md shadow-sm">
+                    <h3 class="font-semibold text-blue-600">RTI Request #1</h3>
+                    <p><strong>Date Filed:</strong> 12 April 2024</p>
+                    <p><strong>Department:</strong> Education Board, Jharkhand</p>
+                    <p><strong>Status:</strong> Under Review</p>
+                    <p><strong>Question:</strong> What are the fund allocations to government schools in Ranchi
+                        district?
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 border border-gray-200/60 p-4 rounded-md shadow-sm">
+                    <h3 class="font-semibold text-blue-600">RTI Request #2</h3>
+                    <p><strong>Date Filed:</strong> 2 May 2024</p>
+                    <p><strong>Department:</strong> Rural Development Dept.</p>
+                    <p><strong>Status:</strong> Replied</p>
+                    <p><strong>Question:</strong> How many toilets were built under the Swachh Bharat Abhiyan in
+                        Hazaribagh
+                        in 2023?</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  
-  <div class="max-w-4xl mx-auto my-10 p-8 bg-white shadow-md rounded-lg">
-    <h1 class="text-3xl font-bold text-blue-600 mb-6 text-center">User Profile</h1>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      
-      
-      <div>
-        <h2 class="text-xl font-semibold mb-2">Personal Info</h2>
-        <p><strong>Name:</strong> <%= user.name %></p>
-        <p><strong>Date of Birth:</strong> <%= user.dob.toDateString() %></p>
-        <p><strong>Gender:</strong> <%= user.gender %></p>
-        <p><strong>Email:</strong> <%= user.email %></p>
-        <p><strong>Phone:</strong> <%= user.phone %></p>
-        <p><strong>Aadhar Number:</strong> <%= user.aadharNumber %></p>
-        <p><strong>Account Created:</strong> <%= user.createdAt.toDateString() %></p>
-      </div>
-
-      
-      <div>
-        <h2 class="text-xl font-semibold mb-2">Address & Other Info</h2>
-        <p><strong>Country:</strong> <%= user.address.country %></p>
-        <p><strong>Pin Code:</strong> <%= user.address.pinCode %></p>
-        <p><strong>Area Type:</strong> <%= user.address.areaType %></p>
-        <p><strong>Poverty Level:</strong> <%= user.povertyLevel %></p>
-        <p><strong>Captcha:</strong> <%= user.captcha %></p>
-      </div>
-    </div>
-  </div>
+    <footer class="bg-green-600 text-white py-6">
+        <div class="text-center text-sm space-y-1">
+            <p>Content provided by <strong>ZERO'S ONE'S</strong>, not the Government of Jharkhand.</p>
+            <p>Software maintained by <strong>ZERO'S ONE'S</strong>.</p>
+        </div>
+    </footer>
 
 </body>
+
 </html>

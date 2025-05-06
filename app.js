@@ -8,10 +8,14 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const userModel = require("./models/user");
 
-mongoose.connect("mongodb://127.0.0.1:27017/rtiProject", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+// MongoDB URI
+const mongoURI = "mongodb://127.0.0.1:27017/rtiProject";
+
+// Connect to MongoDB
+mongoose.connect(mongoURI)
+    .then(() => console.log("MongoDB connected successfully"))
+    .catch((err) => console.log("Error connecting to MongoDB:", err));
+
 
 app.set("view engine", "ejs");
 app.use(express.json());
@@ -40,7 +44,7 @@ const authenticateUser = async (req, res, next) => {
 
 // Home
 app.get("/", (req, res) => {
-    res.render("index");
+    res.render("main");
 });
 
 // Signup
@@ -140,27 +144,32 @@ app.get("/articles", (req, res) => {
 
 // RTI File
 app.get("/rti-file", (req, res) => {
-    res.send("RTI File page - Users can fill out their RTI request here.");
+    res.render("rtiFile")
 });
 
 // Chat
 app.get("/chat", (req, res) => {
-    res.send("Chat page - Users can chat with RTI experts or support.");
+    res.render("chat")
 });
 
 // View Status
 app.get("/view-status", (req, res) => {
-    res.send("View Status page - Users can check the status of their RTI request.");
+    res.render("viewStatus")
 });
 
 // FAQ
 app.get("/faq", (req, res) => {
-    res.send("FAQ page - Frequently asked questions related to RTI.");
+    res.render("faq")
 });
 
 // Profile Page
 app.get("/view-history", authenticateUser, (req, res) => {
     res.render("viewHistory", { user: req.user });
+});
+
+// contact us 
+app.get("/contactus", (req, res) => {
+    res.render("contactus");
 });
 
 app.listen(3000, () => {

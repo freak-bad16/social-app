@@ -1,62 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RTI Simplifier</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RTI Simplifier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .main-content {
+            background-image: url("https://5.imimg.com/data5/PI/TE/MY-13589378/2016-07-05-16-53-05-500x500.jpg");
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            scale: 100%;
+        }
+    </style>
 </head>
+
 <body class="bg-gray-100">
 
-  
-  <nav class="bg-blue-600 p-4 shadow-md">
-    <div class="flex items-center justify-between">
-     
-      <div class="flex items-center space-x-2">
-        <img src="your-logo-url.png" alt="Logo" class="w-10 h-10">
-        <span class="text-white text-2xl font-semibold">RTI SHAYAK</span>
-      </div>
 
-      
-      <div class="space-x-4">
-        <a href="/login" class="text-white bg-green-500 px-4 py-2 rounded hover:bg-green-600">Login</a>
-        <a href="/signup" class="text-white bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">Sign Up</a>
-      </div>
-    </div>
-  </nav>
+    <div class="sticky top-0 z-50">
+        <nav class="relative bg-blue-600 bg-cover bg-bottom p-6 shadow-md"
+            style="background-image: url('https://rti.jharkhand.gov.in/assets/images/banner1.jpg');">
 
-  
-  <div class="bg-gray-200 p-3 shadow-md">
-    <div class="flex justify-center space-x-6">
-      <a href="/" class="text-blue-600 hover:text-blue-800">Home</a>
-      <a href="/articles" class="text-blue-600 hover:text-blue-800">Articles</a>
-      <a href="/rti-file" class="text-blue-600 hover:text-blue-800">RTI File</a>
-      <a href="/chat" class="text-blue-600 hover:text-blue-800">Chat</a>
-      <a href="/view-status" class="text-blue-600 hover:text-blue-800">View Status</a>
-      <a href="/faq" class="text-blue-600 hover:text-blue-800">FAQ</a>
-      <a href="/view-history" class="text-blue-600 hover:text-blue-800">View History</a>
-    </div>
-  </div>
+            <div class="flex items-center justify-between bg-opacity-75 p-4 rounded">
+                <div class="flex items-center space-x-2">
+                    <img src="https://rti.jharkhand.gov.in/images/logo/green-rti.jpg" alt="Logo" class="w-24 h-24" />
+                    <div class="">
+                        <span class="text-white text-2xl font-semibold">RTI SHAYAK</span>
+                        <h1 class="ml-6 ">" Suchna Ka Adhikaar, Loktantra Ka Hathiyaar! " </h1>
+                    </div>
+                </div>
 
-  
-  <div class="flex flex-wrap justify-center items-start p-10 gap-10">
-   
-    <div class="w-full md:w-2/5 text-gray-800 text-justify">
-      <p class="leading-relaxed">
-        The Right to Information Bill was introduced in the Lok Sabha in December 2004. It was passed
-        by both houses of Parliament with major amendments in May 2005. The assent of the President was received on June 15 and the Act was notified in the Gazette on June 21. The law became operational by mid-October 2005. This law was passed by Parliament to enable citizens to exercise their fundamental right to
-        information held by public authorities all over the country (except Jammu and Kashmir). The RTI
-        Act aims to bring about transparency in the functioning of public authorities, contain corruption
-        and hold Governments and their instrumentalities accountable to people. It creates a process for providing information to people. The RTI Act places a duty on officers to provide information both proactively and upon request. It provides for a two-tier appeals mechanism to deal with complaints of denial of information by public authorities. This law overrides the Official Secrets Act, 1923, and all other laws and orders that restrict information flow.
-      </p>
+                <div class="space-x-4">
+                    <a href="/login" class="text-white bg-green-500 px-4 py-2 rounded hover:bg-green-600">Login</a>
+                    <a href="/signup" class="text-white bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">Sign Up</a>
+                </div>
+            </div>
+
+            <div class="absolute bottom-2 right-4">
+                <select class="bg-white text-sm rounded px-2 py-1 shadow focus:outline-none"
+                    aria-label="Language selection">
+                    <option>English</option>
+                    <option>हिन्दी</option>
+                    <option>खोरठा</option>
+                    <option>बंगाली</option>
+                </select>
+            </div>
+
+        </nav>
+
+
+        <div class="bg-gray-200 p-3 shadow-md">
+            <div class="flex justify-center space-x-6">
+                <a href="/main" class="text-blue-600 hover:text-blue-800">Home</a>
+                <a href="/articles" class="text-blue-600 hover:text-blue-800">Articles</a>
+                <a href="/rti-file" class="text-blue-600 hover:text-blue-800">RTI File</a>
+                <a href="/chat" class="text-blue-600 hover:text-blue-800">Chat bot</a>
+                <a href="/view-status" class="text-blue-600 hover:text-blue-800">View Status</a>
+                <a href="/faq" class="text-blue-600 hover:text-blue-800">FAQ</a>
+                <a href="/view-history" class="text-blue-600 hover:text-blue-800">View History</a>
+                <a href="/contactus" class="text-blue-600 hover:text-blue-800">contact us</a>
+            </div>
+        </div>
     </div>
 
-    
-    <div class="w-full md:w-2/5 flex flex-col gap-6 items-center">
-      <img src="https://fileonlinerti.in/assets/img/blog/Jharkhand.png" alt="Image 1" class="w-full rounded-lg shadow-md">
-      <input type="text">
+
+
+    <div class="flex flex-wrap justify-evenly items-start p-6 gap-10 main-content">
+
+        <div class="w-full md:w-2/5 bg-white p-6 rounded-lg shadow-md border border-gray-300">
+            <h2 class="text-xl font-semibold text-blue-700 mb-4 border-b pb-2">What is RTI?</h2>
+            <p class="text-gray-800 text-justify leading-relaxed">
+                The Right to Information Bill was introduced in the Lok Sabha in December 2004. It was passed
+                by both houses of Parliament with major amendments in May 2005. The assent of the President was received
+                on June 15 and the Act was notified in the Gazette on June 21. The law became operational by mid-October
+                2005. This law was passed by Parliament to enable citizens to exercise their fundamental right to
+                information held by public authorities all over the country (except Jammu and Kashmir). The RTI
+                Act aims to bring about transparency in the functioning of public authorities, contain corruption
+                and hold Governments and their instrumentalities accountable to people. It creates a process for
+                providing information to people. The RTI Act places a duty on officers to provide information both
+                proactively and upon request. It provides for a two-tier appeals mechanism to deal with complaints of
+                denial of information by public authorities. This law overrides the Official Secrets Act, 1923, and all
+                other laws and orders that restrict information flow.
+            </p>
+        </div>
+
+        <div class="w-full md:w-2/5 flex flex-col gap-4 items-center">
+            <div class="w-full max-w-4xl mx-auto mt-6">
+                <div class="relative h-[300px]">
+                    <img id="sliderImage"
+                        src="https://images.hindustantimes.com/img/2021/01/19/550x309/199d639c-5a48-11eb-93b1-ccd1f5f37db7_1611055350664.jpg"
+                        alt="RTI Image Slider"
+                        class="w-full h-full object-cover rounded-lg shadow-md transition-all duration-500 ease-in-out" />
+                </div>
+            </div>
+
+        </div>
+
+
+        <div
+            class="w-full md:w-2/5 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-900 p-5 rounded shadow-md mt-6">
+            <h2 class="text-lg font-bold mb-2">Important Note</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li>
+                    Please do <strong>not file RTI applications</strong> through this portal if your request is for
+                    departments or authorities
+                    under the Central Government, other State Governments, or institutions like Jharkhand Vidhan Sabha,
+                    Jharkhand High Court, and Subordinate Courts.
+                    Such applications will be rejected and the application fee will not be refunded.
+                </li>
+                <li>
+                    If your information is related to a district or divisional office, make sure to choose the correct
+                    Headquarter or Directorate
+                    from the list. <strong>Do not select the Commissioner or District office</strong> directly for such
+                    requests.
+                </li>
+                <li>
+                    <strong>Do not spam</strong> or misuse this portal. Strict action will be taken by the government
+                    against anyone found misusing this service.
+                </li>
+            </ul>
+        </div>
+
+        <div class="w-full md:w-2/5 bg-blue-100 border-l-4 border-blue-500 text-blue-900 p-5 rounded shadow-md mt-6">
+            <h2 class="text-lg font-bold mb-2">Objective of the Portal</h2>
+            <p class="mb-3">
+                This portal is designed to help citizens of Jharkhand easily file RTI applications and first appeals
+                online. It aims to make the process simple and accessible for everyone, especially those who may face
+                challenges with paperwork or visiting government offices.
+            </p>
+            <p class="mb-3">
+                In rural areas like Ramgarh, filing RTI requests is often confusing because of complicated forms, lack
+                of information, and limited access to online services. This portal helps solve those problems by letting
+                people submit their RTI requests directly from their phones or computers — no more long queues or
+                confusion.
+            </p>
+            <p>
+                The goal is to empower every citizen to use their Right to Information without hassle.
+            </p>
+        </div>
+
+        <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-4 rounded-md mt-6 shadow-md">
+            <h2 class="text-lg font-semibold mb-2">⚠️ Disclaimer</h2>
+            <p class="mb-2">
+                RTI applications submitted through this portal <strong>will not be transferred under Section
+                    6(3)</strong> of the RTI Act to any
+                <strong>Public Authority that does not have RTI Online services available</strong>.
+            </p>
+            <p class="mb-2">
+                This website has been developed by <strong>Team ZERO'S ONE'S</strong> for learning and development
+                purposes. While we aim for accuracy,
+                some information on this site <strong>might not be correct or up to date</strong>.
+            </p>
+            <p>
+                For the official and most accurate information, please visit the original RTI Jharkhand website:<br />
+                🔗
+                <a href="https://rti.jharkhand.gov.in/index.php?lan=E"
+                    class="text-blue-600 underline hover:text-blue-800" target="_blank">
+                    https://rti.jharkhand.gov.in/index.php?lan=E
+                </a>
+            </p>
+        </div>
+
     </div>
-  </div>
+
+
+    <div class="fixed bottom-5 right-5 z-50">
+        <button onclick="toggleChat()"
+            class="bg-orange-500 text-white w-14 h-14 rounded-full shadow-lg text-2xl flex items-center justify-center">💬</button>
+    </div>
+
+    <div id="chatbox"
+        class="fixed bottom-24 right-5 w-80 bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 hidden">
+        <div class="bg-orange-500 text-white px-6 py-4 flex justify-between items-center font-bold">
+            <span>RTI Sahayak Chatbot</span>
+            <span class="cursor-pointer" onclick="toggleChat()">❌</span>
+        </div>
+        <div id="messages" class="h-80 overflow-y-auto p-4 text-sm space-y-2 bg-gray-50"></div>
+        <div class="flex items-center p-3 border-t">
+            <input id="userInput" type="text" placeholder="Apna prashn likhiye..."
+                class="flex-1 border border-gray-300 rounded px-2 py-1 text-sm" />
+            <button onclick="sendMessage()" class="ml-2 bg-orange-500 text-white px-3 py-1 rounded text-sm">📤</button>
+            <button onclick="startVoiceRecognition()"
+                class="ml-1 bg-orange-500 text-white px-3 py-1 rounded text-sm">🎤</button>
+        </div>
+        <div id="submitSection" class="p-3 hidden">
+            <button onclick="downloadRTIPDF()" class="w-full bg-green-600 text-white py-2 rounded text-sm">RTI
+                Application डाउनलोड करें</button>
+        </div>
+    </div>
+
+    <script>
+        let recognition;
+        let finalTranscript = '';
+        let chatHistory = [];
+
+        const predefinedQA = [
+            // Greetings and General Inquiries
+            { keywords: ["hi", "hello", "namaste", "johar"], answer: "Johar! Main RTI Sahayak hoon, main aapki kaise sahayata kar sakta hoon?" },
+            { keywords: ["kaise ho", "kya haal", "how are you"], answer: "Main theek hoon! Aap bataiye, aapko kis baare mein jankari chahiye?" },
+            { keywords: ["thank", "shukriya", "dhanyawaad"], answer: "Aapka swagat hai! Agar aur kisi madad ki zarurat ho toh zaroor batayein." },
+            { keywords: ["bye", "goodbye", "alvida"], answer: "Alvida! Aapka din shubh ho!" },
+
+            // RTI Related Queries
+            { keywords: ["rti", "right to information"], answer: "RTI ke madhyam se aap kisi bhi sarkari vibhag se jankari prapt kar sakte hain." },
+            { keywords: ["rti kaise file", "rti application", "file", "kaise", "form"], answer: "RTI file karne ke liye aapko ek saral application likhni hoti hai jisme aapka prashn spasht ho." },
+            { keywords: ["rti fees", "rti shulk", "fees", "shulk", "payment"], answer: "RTI file karne ki fees aam taur par ₹10 hoti hai. SC/ST ke liye kai jagah free bhi hoti hai." },
+            { keywords: ["rti reply", "rti answer", "rti response time", "reply", "answer", "kab tak"], answer: "RTI ka jawab 30 din ke andar aana chahiye. Samay se na aaye to appeal kar sakte hain." },
+            { keywords: ["rti appeal", "rti second appeal"], answer: "Agar aapko RTI ka santoshjanak jawab nahi milta, toh aap pehle aur doosre appeal kar sakte hain." },
+            { keywords: ["rti online", "online rti"], answer: "Aap RTI online bhi file kar sakte hain sarkari website ke madhyam se." },
+
+            // RTO Related Queries
+            { keywords: ["driving licence", "driving license"], answer: "Driving licence ke liye aapko online ya RTO office me application deni hoti hai." },
+            { keywords: ["learner's licence", "learning license"], answer: "Learner's licence ke liye aapko online test dena hota hai aur kuch documents jama karne hote hain." },
+            { keywords: ["vehicle registration", "rc book"], answer: "Vehicle registration ke liye aapko RTO me application deni hoti hai saath hi required documents jama karne hote hain." },
+            { keywords: ["rc transfer", "ownership transfer"], answer: "RC transfer ke liye buyer aur seller dono ke documents ki avashyakta hoti hai." },
+            { keywords: ["pollution certificate", "puc"], answer: "Pollution certificate har vehicle ke liye anivarya hai aur isse aap authorized centers se prapt kar sakte hain." },
+            { keywords: ["road tax", "vehicle tax"], answer: "Road tax vehicle ke type aur state ke anusar alag hota hai. Iski jankari RTO se prapt ki ja sakti hai." },
+
+            // General Administrative Queries
+            { keywords: ["aadhar card", "aadhaar card"], answer: "Aadhaar card se judi jankari ke liye aap UIDAI ki website par visit kar sakte hain." },
+            { keywords: ["pan card"], answer: "PAN card banwane ke liye aap NSDL ya UTIITSL ki website par apply kar sakte hain." },
+            { keywords: ["passport"], answer: "Passport ke liye aap passport seva kendra me appointment le kar application de sakte hain." },
+            { keywords: ["voter id"], answer: "Voter ID ke liye aap Election Commission ki website par online apply kar sakte hain." },
+            { keywords: ["birth certificate"], answer: "Birth certificate ke liye aap local municipal office me application de sakte hain." },
+            { keywords: ["death certificate"], answer: "Death certificate ke liye aap local municipal office me application de sakte hain." },
+            { keywords: ["caste certificate"], answer: "Caste certificate ke liye aap tehsil ya SDM office me apply kar sakte hain." },
+            { keywords: ["income certificate"], answer: "Income certificate ke liye aap tehsil ya SDM office me apply kar sakte hain." },
+            { keywords: ["domicile certificate"], answer: "Domicile certificate ke liye aap tehsil ya SDM office me apply kar sakte hain." },
+
+            // Social Welfare Schemes
+            { keywords: ["ration card", "ration", "khadya"], answer: "Ration card se judi jankari aapke rajya ki official website ya RTI ke madhyam se mil sakti hai." },
+            { keywords: ["pension", "vriddh", "old age", "pension yojna"], answer: "Pension yojna me deri ya naam na hone par aap RTI dakhil karke karan puch sakte hain." },
+            { keywords: ["manrega", "mnrega", "nrega"], answer: "MANREGA ke antargat kaam aur bhugtan se judi jankari RTI se li ja sakti hai." },
+            { keywords: ["ujjwala yojana", "gas connection"], answer: "Ujjwala Yojana ke antargat gas connection se judi jankari RTI ke madhyam se prapt ki ja sakti hai." },
+            { keywords: ["pm kisan", "kisan samman nidhi"], answer: "PM Kisan Yojana ke antargat bhugtan se judi jankari RTI ke madhyam se prapt ki ja sakti hai." },
+            { keywords: ["ayushman bharat", "health card"], answer: "Ayushman Bharat Yojana ke antargat health card se judi jankari RTI ke madhyam se prapt ki ja sakti hai." },
+
+            // Education Related Queries
+            { keywords: ["school", "teacher", "shikshak"], answer: "School me suvidhaon ya shikshak ki upasthiti jaane ke liye RTI lagayi ja sakti hai." },
+            { keywords: ["scholarship", "chatravriti"], answer: "Scholarship se judi jankari ke liye aap RTI ke madhyam se prashn kar sakte hain." },
+            { keywords: ["college admission"], answer: "College admission process se judi jankari RTI ke madhyam se prapt ki ja sakti hai." },
+            { keywords: ["exam result"], answer: "Exam result se judi jankari ke liye aap RTI ke madhyam se prashn kar sakte hain." },
+
+            // Health Related Queries
+            { keywords: ["hospital", "aspatal", "doctor", "swasthya"], answer: "Sarkari aspatal me suvidhaon ke abhav ya doctor ki upasthiti ke liye RTI lagai ja sakti hai." },
+            { keywords: ["medical store", "medicine"], answer: "Sarkari medical store me dawa ki uplabdhata se judi jankari RTI ke madhyam se prapt ki ja sakti hai." },
+            { keywords: ["ambulance service"], answer: "Ambulance service ki uplabdhata aur response time se judi jankari RTI ke madhyam se prapt ki ja sakti hai." },
+
+            // Public Services
+            { keywords: ["pani", "water", "jal"], answer: "Pani ki samasyao ke liye nagar nigam ya jal vibhag ke virudh RTI dakhil ki ja sakti hai." },
+            { keywords: ["bijli", "electricity", "bill"], answer: "Bijli ke adhik bill ka karan adhik upyog, meter ki galti, ya estimated reading ho sakti hai." },
+            { keywords: ["sadak", "road", "nirmaan", "karcha"], answer: "Sadak nirmaan me hone wale karch ka pura vivaran aap RTI ke madhyam se prapt kar sakte hain." },
+            { keywords: ["nagar nigam", "municipality"], answer: "Nagar nigam se judi kisi bhi jankari ke liye aap RTI file kar sakte hain." },
+            { keywords: ["garbage", "kuda"], answer: "Kuda prabandhan aur safai se judi jankari ke liye aap RTI ke madhyam se prashn kar sakte hain." },
+
+            // Miscellaneous
+            { keywords: ["complaint", "shikayat", "application"], answer: "Agar aapki kisi complaint par koi action nahi hua hai, toh aap RTI dakhil kar sakte hain." }
+        ];
+
+
+        function toggleChat() {
+            const box = document.getElementById("chatbox");
+            box.classList.toggle("hidden");
+        }
+
+        function startVoiceRecognition() {
+            if (!('webkitSpeechRecognition' in window)) {
+                alert("Voice recognition not supported");
+                return;
+            }
+            recognition = new webkitSpeechRecognition();
+            recognition.lang = "hi-IN";
+            recognition.interimResults = false;
+            recognition.onresult = function (event) {
+                finalTranscript = event.results[0][0].transcript;
+                document.getElementById("userInput").value = finalTranscript;
+                sendMessage();
+            };
+            recognition.start();
+        }
+
+        function speak(text) {
+            const msg = new SpeechSynthesisUtterance();
+            msg.text = text;
+            msg.lang = 'hi-IN';
+            window.speechSynthesis.speak(msg);
+        }
+
+        function sendMessage() {
+            const input = document.getElementById("userInput").value.toLowerCase().trim();
+            if (!input) return;
+            const messages = document.getElementById("messages");
+            messages.innerHTML += `<div><strong>आप:</strong> ${input}</div>`;
+            let answer = "Maaf kijiye, mujhe aapka prashn samajh nahi aaya";
+            for (const pair of predefinedQA) {
+                if (pair.keywords.some(kw => input.includes(kw))) {
+                    answer = pair.answer;
+                    break;
+                }
+            }
+            chatHistory.push({ question: input, answer: answer });
+            messages.innerHTML += `<div><strong>Bot:</strong> ${answer}</div>`;
+            messages.scrollTop = messages.scrollHeight;
+            speak(answer);
+            document.getElementById("userInput").value = "";
+            if (chatHistory.length >= 3) {
+                document.getElementById("submitSection").classList.remove("hidden");
+            }
+        }
+
+        function downloadRTIPDF() {
+            const text = chatHistory.map((qna, i) =>
+                `${i + 1}. प्रश्न: ${qna.question}\nउत्तर: ${qna.answer}\n`
+            ).join("\n");
+            const blob = new Blob([`RTI Application\n\n${text}`], { type: "text/plain" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "RTI-Application.txt";
+            link.click();
+        }
+    </script>
+
+
+
+
+    <footer class="bg-green-600 text-white py-6 mt-4">
+        <div class="container mx-auto px-4">
+            <div class="text-center space-y-2 text-sm md:text-base">
+                <p>Content of this site is provided by <strong> ZERO'S ONE'S , NOT Government of
+                        Jharkhand</strong>.</p>
+                <p>Software maintained and refurbished by <strong>ZERO'S ONE'S</strong>.</p>
+            </div>
+        </div>
+    </footer>
+
 
 </body>
-</html>
+
+<script>
+    const images = [
+        "https://www.theindiaforum.in/sites/default/files/field/image/2022/06/21/rti-main-1566539358-1566539358.jpg",
+        "https://media.assettype.com/newslaundry/2024-11-05/q9gtb5sx/RTI-SHOT.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true",
+        "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201901/rti_647_081415081134.jpeg",
+        "https://sariyacollege.ac.in/wp-content/uploads/2024/07/rti-1.jpg"
+    ];
+
+    let currentIndex = 0;
+    const sliderImage = document.getElementById("sliderImage");
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        sliderImage.src = images[currentIndex];
+    }, 2000); 
+</script>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RTI SHAYAK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .main-content {
+            background-image: url("https://www.artzolo.com/cdn/shop/files/warli-art-23-artzolo-com.jpg?v=1715694650&width=900");
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            scale: 100%;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-100">
+
+    <div class="sticky top-0 z-50">
+        <nav class="relative bg-blue-600 bg-cover bg-bottom p-6 shadow-md"
+            style="background-image: url('https://rti.jharkhand.gov.in/assets/images/banner1.jpg');">
+
+            <div class="flex items-center justify-between bg-opacity-75 p-4 rounded">
+                <div class="flex items-center space-x-2">
+                    <img src="https://rti.jharkhand.gov.in/images/logo/green-rti.jpg" alt="Logo" class="w-24 h-24" />
+                    <div class="">
+                        <span class="text-white text-2xl font-semibold">RTI SHAYAK</span>
+                        <h1 class="ml-6">" Suchna Ka Adhikaar, Loktantra Ka Hathiyaar! " </h1>
+                    </div>
+                </div>
+
+                <div class="space-x-4">
+                    <a href="/login" class="text-white bg-green-500 px-4 py-2 rounded hover:bg-green-600">Login</a>
+                    <a href="/signup" class="text-white bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">Sign Up</a>
+                </div>
+            </div>
+
+            <div class="absolute bottom-2 right-4">
+                <select class="bg-white text-sm rounded px-2 py-1 shadow focus:outline-none"
+                    aria-label="Language selection">
+                    <option>English</option>
+                    <option>हिन्दी</option>
+                    <option>खोरठा</option>
+                    <option>बंगाली</option>
+                </select>
+            </div>
+
+        </nav>
+
+
+        <div class="bg-gray-200 p-3 shadow-md">
+            <div class="flex justify-center space-x-6">
+                <a href="/main" class="text-blue-600 hover:text-blue-800">Home</a>
+                <a href="/articles" class="text-blue-600 hover:text-blue-800">Articles</a>
+                <a href="/rti-file" class="text-blue-600 hover:text-blue-800">RTI File</a>
+                <a href="/chat" class="text-blue-600 hover:text-blue-800">Chat bot</a>
+                <a href="/view-status" class="text-blue-600 hover:text-blue-800">View Status</a>
+                <a href="/faq" class="text-blue-600 hover:text-blue-800">FAQ</a>
+                <a href="/view-history" class="text-blue-600 hover:text-blue-800">View History</a>
+                <a href="/contactus" class="text-blue-600 hover:text-blue-800">contact us</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="max-w-4xl mx-auto my-10 px-4 ">
+            <div id="faq-container" class="space-y-4">
+
+                <div class="border rounded">
+                    <button
+                        class="w-full text-left px-4 py-3 bg-white/70 hover:bg-gray-100 flex justify-between items-center faq-question">
+                        ❓ What is RTI?
+                        <span class="ml-2 text-xl">+</span>
+                    </button>
+                    <div class="px-4 py-3 bg-gray-50/70 hidden faq-answer">
+                        ✅ RTI (Right to Information) is a law that allows every citizen to request information from
+                        government offices.
+                    </div>
+                </div>
+
+                <div class="border rounded">
+                    <button
+                        class="w-full text-left px-4 py-3 bg-white/70 hover:bg-gray-100 flex justify-between items-center faq-question">
+                        ❓ How to file an RTI?
+                        <span class="ml-2 text-xl">+</span>
+                    </button>
+                    <div class="px-4 py-3 bg-gray-50/70 hidden faq-answer">
+                        ✅ You can submit your question on the RTI Simplifier portal. We help you prepare and send the
+                        RTI application to the concerned government office.
+                    </div>
+                </div>
+
+                <div class="border rounded">
+                    <button
+                        class="w-full text-left px-4 py-3 bg-white/70 hover:bg-gray-100 flex justify-between items-center faq-question">
+                        ❓ Who can file an RTI?
+                        <span class="ml-2 text-xl">+</span>
+                    </button>
+                    <div class="px-4 py-3 bg-gray-50/70 hidden faq-answer">
+                        ✅ Any Indian citizen can file an RTI. You only need to provide your name, address, and the
+                        question you want to ask.
+                    </div>
+                </div>
+
+                <div class="border rounded">
+                    <button
+                        class="w-full text-left px-4 py-3 bg-white/70 hover:bg-gray-100 flex justify-between items-center faq-question">
+                        ❓ What is required to file an RTI?
+                        <span class="ml-2 text-xl">+</span>
+                    </button>
+                    <div class="px-4 py-3 bg-gray-50/70 hidden faq-answer">
+                        ✅ You need to provide:<br>
+                        - Your full name<br>
+                        - Your address<br>
+                        - The department/office where the RTI is to be sent<br>
+                        - Your specific question or request
+                    </div>
+                </div>
+
+                <div class="border rounded">
+                    <button
+                        class="w-full text-left px-4 py-3 bg-white/70 hover:bg-gray-100 flex justify-between items-center faq-question">
+                        ❓ When will I get a reply to my RTI?
+                        <span class="ml-2 text-xl">+</span>
+                    </button>
+                    <div class="px-4 py-3 bg-gray-50/70 hidden faq-answer">
+                        ✅ You should get a reply within 30 days. If you don’t, you can file an appeal.
+                    </div>
+                </div>
+
+                <div class="border rounded">
+                    <button
+                        class="w-full text-left px-4 py-3 bg-white/70 hover:bg-gray-100 flex justify-between items-center faq-question">
+                        ❓ Is there a fee to file an RTI?
+                        <span class="ml-2 text-xl">+</span>
+                    </button>
+                    <div class="px-4 py-3 bg-gray-50/70 hidden faq-answer">
+                        ✅ Yes, a general RTI costs ₹10. If you are Below Poverty Line (BPL), the fee may be waived.
+                    </div>
+                </div>
+
+                <div class="border rounded">
+                    <button
+                        class="w-full text-left px-4 py-3 bg-white/70 hover:bg-gray-100 flex justify-between items-center faq-question">
+                        ❓ How do I know which department to send the RTI to?
+                        <span class="ml-2 text-xl">+</span>
+                    </button>
+                    <div class="px-4 py-3 bg-gray-50/70 hidden faq-answer">
+                        ✅ If you are not sure, you can ask our chatbot. We will help you identify the correct
+                        department.
+                    </div>
+                </div>
+
+                <div class="border rounded">
+                    <button
+                        class="w-full text-left px-4 py-3 bg-white/70 hover:bg-gray-100 flex justify-between items-center faq-question">
+                        ❓ Can I write the RTI in Hindi or local language?
+                        <span class="ml-2 text-xl">+</span>
+                    </button>
+                    <div class="px-4 py-3 bg-gray-50/70 hidden faq-answer">
+                        ✅ Yes, you can write your RTI in Hindi or your local language.
+                    </div>
+                </div>
+
+                <div class="border rounded">
+                    <button
+                        class="w-full text-left px-4 py-3 bg-white/70 hover:bg-gray-100 flex justify-between items-center faq-question">
+                        ❓ Will I get a written reply to my RTI?
+                        <span class="ml-2 text-xl">+</span>
+                    </button>
+                    <div class="px-4 py-3 bg-gray-50/70 hidden faq-answer">
+                        ✅ Yes, you will receive the reply by post or email at your given address.
+                    </div>
+                </div>
+
+                <div class="border rounded">
+                    <button
+                        class="w-full text-left px-4 py-3 bg-white/70 hover:bg-gray-100 flex justify-between items-center faq-question">
+                        ❓ What if I don’t get a reply to my RTI?
+                        <span class="ml-2 text-xl">+</span>
+                    </button>
+                    <div class="px-4 py-3 bg-gray-50/70 hidden faq-answer">
+                        ✅ You can file a First Appeal. We also help you write the appeal.
+                    </div>
+                </div>
+
+                <div class="border rounded">
+                    <button
+                        class="w-full text-left px-4 py-3 bg-white/70 hover:bg-gray-100 flex justify-between items-center faq-question">
+                        ❓ Can I ask about electricity bills, road work expenses, or ration data in RTI?
+                        <span class="ml-2 text-xl">+</span>
+                    </button>
+                    <div class="px-4 py-3 bg-gray-50/70 hidden faq-answer">
+                        ✅ Yes, you can file an RTI for all these topics. Just make sure your question is clear.
+                    </div>
+                </div>
+
+                <div class="border rounded">
+                    <button
+                        class="w-full text-left px-4 py-3 bg-white/70 hover:bg-gray-100 flex justify-between items-center faq-question">
+                        ❓ How can I file RTI without visiting any office?
+                        <span class="ml-2 text-xl">+</span>
+                    </button>
+                    <div class="px-4 py-3 bg-gray-50/70 hidden faq-answer">
+                        ✅ You can file RTI online through the RTI Simplifier portal or chatbot. No need to visit any
+                        office.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-green-600 text-white py-6 mt-4">
+        <div class="container mx-auto px-4">
+            <div class="text-center space-y-2 text-sm md:text-base">
+                <p>© 2025 RTI SHAYAK. All rights reserved.</p>
+                <p>Helping citizens file RTI with ease.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('span');
+                answer.classList.toggle('hidden');
+                icon.textContent = icon.textContent === '+' ? '−' : '+';
+            });
+        });
+    </script>
+
+</body>
+
+</html>
